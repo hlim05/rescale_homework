@@ -5,7 +5,7 @@ from pages import page_landing, page_login
 from helper import config_browser
 
 
-class TestLoginPage(unittest.TestCase):
+class TestUploadFile(unittest.TestCase):
     def setUp(self):
         self.driver = config_browser.initiate_driver(str(os.path.basename(__file__)), self._testMethodName)
         self.login_page = page_login.LoginPage(self.driver)
