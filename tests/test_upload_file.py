@@ -16,6 +16,7 @@ class TestLoginPage(unittest.TestCase):
         self.file_name = '{}{}'.format(rescale_config.upload_dir, rescale_config.upload_file)
         self.download_file_name = '{}{}'.format(rescale_config.download_dir, rescale_config.upload_file)
 
+        #Log into the Web interface
         self.login_page.enter_email_address(self.user_email)
         self.login_page.enter_password(self.user_password)
 
@@ -23,12 +24,12 @@ class TestLoginPage(unittest.TestCase):
         self.driver.quit()
 
     def test_upload_file(self):
-        #self.rescale_landing_page.upload_file(self.file_name)
-        #self.rescale_landing_page.validate_file_uploaded_to_ui(self.file_name)
-        # validate file integrity before and after
+        self.rescale_landing_page.upload_file(self.file_name)
+        self.rescale_landing_page.validate_file_uploaded_to_ui(self.file_name)
+        # validate file integrity before
         file_hash_before = self.rescale_landing_page.validate_file_integrity(self.file_name)
         # download file from the UI
-        #self.rescale_landing_page.download_file_from_ui(self.file_name)
+        self.rescale_landing_page.download_file_from_ui(self.file_name)
         file_hash_after = self.rescale_landing_page.validate_file_integrity(self.download_file_name)
         self.assertEqual(file_hash_before, file_hash_after)
 
