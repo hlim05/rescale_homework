@@ -15,9 +15,9 @@ class RescaleLandingPage(BasePage):
 
     def upload_file(self, file_name):
         self.click(self.new_job_button)
-
+        # self.click(self.upload_from_this_computer)
         #I'm having trouble getting this to work.
-        self.send_keys(file_name, self.file_input)
+        #self.send_keys(file_name, self.upload_from_this_computer)
 
     def validate_file_uploaded_to_ui(self, file_name):
         self.click(self.menu_files)
