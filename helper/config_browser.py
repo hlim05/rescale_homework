@@ -3,7 +3,7 @@ from selenium import webdriver
 
 def initiate_driver(project_name, test_name):
     '''
-    Can support other browsers by putting in the if statements here.
+    Can support other browsers by putting in the if statements here to invoke different browsers.
     '''
 
     options = webdriver.ChromeOptions()

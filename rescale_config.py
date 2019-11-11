@@ -1,4 +1,3 @@
-#For future use to select different browsers to test
 browser = 'chrome'
 
 # Rescale user
@@ -8,6 +7,7 @@ login_password = 'rescalehomework'
 # File to upload
 upload_file = 'rescale_homework.txt'
 
-# Working directories
+# Working directories.
+# NOTE:  Change this to your working directories to where you store your upload/download file.
 upload_dir = '/Users/hlim/Downloads/'
 download_dir = '/Users/hlim/Downloads/'

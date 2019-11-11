@@ -17,7 +17,7 @@ class RescaleLandingPage(BasePage):
         self.click(self.new_job_button)
 
         #I'm having trouble getting this to work.
-        self.send_keys(file_name, self.upload_from_this_computer)
+        self.send_keys(file_name, self.file_input)
 
     def validate_file_uploaded_to_ui(self, file_name):
         self.click(self.menu_files)
@@ -25,9 +25,9 @@ class RescaleLandingPage(BasePage):
         if self.wait_for_element(file_check, wait=15):
             file_found = self.find_element_by(*file_check)
             if file_found:
-                print('File uploaded = {}'.format(file_found.text))
+                return True
             else:
-                print('File failed to upload.')
+                return False
 
     def download_file_from_ui(self, file_name):
         self.click(self.menu_files)
